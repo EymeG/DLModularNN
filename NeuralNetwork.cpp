@@ -34,6 +34,9 @@ void NeuralNetwork::addLayer(const Layer& l) {
 // - isTraining: boolean flag indicating if the operation is for training
 void NeuralNetwork::feedForward(int inputIndex, bool isTraining) {
     std::vector<double> input = inputs[inputIndex];
+    if (input.size() != layers[0].getLayerSize()){
+        throw std::invalid_argument("Input size does not match input layer size");
+    }
     layers[0].setInputs(input);
     layers[0].computeOutputs(true);
     layers[0].computeActivation();
@@ -262,7 +265,7 @@ void NeuralNetwork::confusion(std::vector<std::vector<double>> inputs, std::vect
                 max = j;
             }
         }
-        confusionMatrix[max][expectedOutputs[i]]++;
+        confusionMatrix[expectedOutputs[i]][max]++;
     }
     // Compute accuracy
     double accuracy = 0;
@@ -271,17 +274,21 @@ void NeuralNetwork::confusion(std::vector<std::vector<double>> inputs, std::vect
     }
     accuracy = accuracy / inputs.size();
 
-    // Compute precision
+    // Compute precision & recall
     std::vector<double> precision(N, 0);
+    std::vector<double> recall(N, 0);
     for (int i = 0; i < N; i++) {
         double tp = confusionMatrix[i][i];
         double fp = 0;
+        double fn = 0;
         for (int j = 0; j < N; j++) {
             if (j != i) {
                 fp += confusionMatrix[i][j];
+                fn += confusionMatrix[j][i];
             }
         }
         precision[i] = tp / (tp + fp);
+        recall[i] = tp / (tp + fn);
     }
 
     std::cout << "------------------------------------------------" << std::endl;
@@ -305,7 +312,7 @@ void NeuralNetwork::confusion(std::vector<std::vector<double>> inputs, std::vect
         for (int j = 0; j < N; j++) {
             std::cout << std::setw(maxWidth) << static_cast<int>(confusionMatrix[i][j]) << " ";
         }
-        std::cout << "      | prec_" << i << ": " << precision[i] << std::endl;
+        std::cout << "      | prec_" << i << ": " << precision[i] << "      | recall_"<< i << ": " << recall[i] << std::endl;
     }
 }
 

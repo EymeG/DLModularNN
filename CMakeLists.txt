@@ -3,7 +3,7 @@ project(DLModularNN)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(DLModularNN mainXOR.cpp
+add_executable(DLModularNN mainMNIST.cpp
         DenseLayer.cpp
         DenseLayer.h
         NeuralNetwork.h

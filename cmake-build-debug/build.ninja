@@ -49,8 +49,8 @@ cmake_ninja_workdir = C$:/Users/eymeg/Documents/Dep$ info/C++/DLModularNN/cmake-
 
 build cmake_object_order_depends_target_DLModularNN: phony || CMakeFiles/DLModularNN.dir
 
-build CMakeFiles/DLModularNN.dir/mainXOR.cpp.obj: CXX_COMPILER__DLModularNN_unscanned_Debug C$:/Users/eymeg/Documents/Dep$ info/C++/DLModularNN/mainXOR.cpp || cmake_object_order_depends_target_DLModularNN
-  DEP_FILE = CMakeFiles\DLModularNN.dir\mainXOR.cpp.obj.d
+build CMakeFiles/DLModularNN.dir/mainMNIST.cpp.obj: CXX_COMPILER__DLModularNN_unscanned_Debug C$:/Users/eymeg/Documents/Dep$ info/C++/DLModularNN/mainMNIST.cpp || cmake_object_order_depends_target_DLModularNN
+  DEP_FILE = CMakeFiles\DLModularNN.dir\mainMNIST.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\DLModularNN.dir
   OBJECT_FILE_DIR = CMakeFiles\DLModularNN.dir
@@ -75,7 +75,7 @@ build CMakeFiles/DLModularNN.dir/NeuralNetwork.cpp.obj: CXX_COMPILER__DLModularN
 #############################################
 # Link the executable DLModularNN.exe
 
-build DLModularNN.exe: CXX_EXECUTABLE_LINKER__DLModularNN_Debug CMakeFiles/DLModularNN.dir/mainXOR.cpp.obj CMakeFiles/DLModularNN.dir/DenseLayer.cpp.obj CMakeFiles/DLModularNN.dir/NeuralNetwork.cpp.obj
+build DLModularNN.exe: CXX_EXECUTABLE_LINKER__DLModularNN_Debug CMakeFiles/DLModularNN.dir/mainMNIST.cpp.obj CMakeFiles/DLModularNN.dir/DenseLayer.cpp.obj CMakeFiles/DLModularNN.dir/NeuralNetwork.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\DLModularNN.dir

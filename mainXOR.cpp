@@ -24,6 +24,8 @@ void printVector(const std::vector<double>& v) {
 // - expectedOutputs: a vector of expected output values
 void printResult(const std::vector<std::vector<double>> inputs, const std::vector<std::vector<double>>& results, const std::vector<double>& expectedOutputs) {
     for (int i = 0; i < inputs.size(); i++) {
+        std::cout << " Input: ";
+        printVector(inputs[i]);
         std::cout << " Expected: " << expectedOutputs[i];
         std::cout << " Got: ";
         printVector(results[i]);
@@ -32,7 +34,7 @@ void printResult(const std::vector<std::vector<double>> inputs, const std::vecto
 }
 
 int main(){
-    NeuralNetwork nn(0.1, 2000,"mse");
+    NeuralNetwork nn(0.1, 400,"mse");
     nn.addLayer(Layer(2, "input"));
     nn.addLayer(Layer(35, "relu"));
     nn.addLayer(Layer(35, "linear"));
@@ -41,10 +43,10 @@ int main(){
     nn.addLayer(Layer(1,  "sigmoid"));
 
     std::vector<std::vector<double>> inputs = {
-            {0, 0},
-            {0, 1},
+            {1, 1},
             {1, 0},
-            {1, 1}
+            {0, 1},
+            {0, 0}
     };
     std::vector<double> expectedOutputs = {0, 1, 1, 0};
     nn.train(inputs, expectedOutputs);
