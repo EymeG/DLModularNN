@@ -1,0 +1,10 @@
+# ninja log v5
+10	1131	7394850121083000	CMakeFiles/DLModularNN.dir/main.cpp.obj	f399d0182e8d43b1
+76	2122	7394837932685747	CMakeFiles/DLModularNN.dir/DenseLayer.cpp.obj	aed66743400a6a93
+2	313	7394862877746972	build.ninja	83be6fd970624f0c
+25	2953	7394848483455055	CMakeFiles/DLModularNN.dir/NeuralNetwork.cpp.obj	6c63a08c0dffd7ca
+6	629	7394858235334877	CMakeFiles/DLModularNN.dir/mainxor.cpp.obj	a48d33fafe07b95b
+629	831	7394858237324920	DLModularNN.exe	5ed4aff7f0a45d52
+3	466	7394862877746972	build.ninja	83be6fd970624f0c
+91	1020	7394862888729561	CMakeFiles/DLModularNN.dir/mainXOR.cpp.obj	ee45b4af53d9c61f
+1021	1243	7394862890929494	DLModularNN.exe	7cdf5ed718d8127e
