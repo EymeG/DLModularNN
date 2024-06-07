@@ -18,11 +18,11 @@ For multilabels classification tasks, the neural network can classify input data
 
 ### `NeuralNetwork`
 
-The `NeuralNetwork` class represents a neural network model for MNIST digit classification.
+The `NeuralNetwork` class represents a neural network model in which the user can add Layer by himself, following the modular approach of python Keras library.
 
 #### Constructor:
 
-- **`NeuralNetwork(double lr, int nEpochs, std::string lossFunction)`**: Constructs a neural network with the specified learning rate, number of epochs, and loss function.
+- **`NeuralNetwork(double lr, int nEpochs, std::string lossFunction)`**: Constructs a neural network with the specified learning rate, number of epochs to perform during training, and the loss function to use.
 
 #### Methods:
 
@@ -34,16 +34,11 @@ The `NeuralNetwork` class represents a neural network model for MNIST digit clas
 - **`save(std::string filename)`**: Saves the trained model to a file.
 - **`load(const std::string& filename)`**: Loads a trained model from a file.
 - **`summary()`**: Displays a summary of the neural network configuration and parameters.
-- **`confusion(std::vector<std::vector<double>> inputs, std::vector<double> expectedOutputs)`**: Computes and displays the confusion matrix for evaluating the model's performance.
+- **`confusion(std::vector<std::vector<double>> inputs, std::vector<double> expectedOutputs)`**: Computes and displays the confusion matrix for evaluating the model's performance of a multilabel classification model(accuracy & precision).
 
 #### Destructor:
 
 - **`~NeuralNetwork()`**: Default destructor.
-
----
-
-
-Here's a markdown summary for the `Layer` class:
 
 ---
 
