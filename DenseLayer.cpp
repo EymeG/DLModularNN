@@ -252,4 +252,3 @@ int Layer::layerSummary(int index) const {
     std::cout << "------------------------------------------------" << std::endl;
     return layerSize * (lastLayerSize + 1);
 }
-

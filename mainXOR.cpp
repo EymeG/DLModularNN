@@ -34,7 +34,7 @@ void printResult(const std::vector<std::vector<double>> inputs, const std::vecto
 }
 
 int main(){
-    NeuralNetwork nn(0.1, 400,"mse");
+    NeuralNetwork nn(0.1, 400,"bin_crossentropy");
     nn.addLayer(Layer(2, "input"));
     nn.addLayer(Layer(35, "relu"));
     nn.addLayer(Layer(35, "linear"));

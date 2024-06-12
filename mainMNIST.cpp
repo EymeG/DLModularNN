@@ -34,7 +34,7 @@ void printResult(const std::vector<std::vector<double>> inputs, const std::vecto
 // Returns:
 // - a vector of labels
 std::vector<double> loadMNISTLabels() {
-    std::ifstream file("./mnist_test.csv");
+    std::ifstream file("./data/mnist_test.csv");
     std::vector<double> res;
     if (!file.is_open()) {
         std::cerr << "Error: Unable to open file mnist_test.csv" << std::endl;
@@ -63,7 +63,7 @@ std::vector<double> loadMNISTLabels() {
 // Returns:
 // - a vector of vectors, each containing the pixel values of an image
 std::vector<std::vector<double>> loadMNISTData() {
-    std::ifstream file("./mnist_test.csv");
+    std::ifstream file("./data/mnist_test.csv");
     std::vector<std::vector<double>> res;
     if (!file.is_open()) {
         std::cerr << "Error: Unable to open file mnist_test.csv" << std::endl;
@@ -156,7 +156,7 @@ int main() {
     NeuralNetwork nnMNIST(0.2, 5, "cat_crossentropy");
     nnMNIST.addLayer(Layer(196, "input"));
     nnMNIST.addLayer(Layer(50, "tanh"));
-    nnMNIST.addLayer(Layer(15, "sigmoid"));
+    nnMNIST.addLayer(Layer(50, "sigmoid"));
     nnMNIST.addLayer(Layer(10, "softmax"));
     nnMNIST.summary();
 

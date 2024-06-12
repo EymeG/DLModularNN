@@ -8,4 +8,4 @@ add_executable(DLModularNN mainMNIST.cpp
         DenseLayer.h
         NeuralNetwork.h
         NeuralNetwork.cpp
-        )
+)

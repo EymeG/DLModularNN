@@ -74,6 +74,10 @@ void NeuralNetwork::backPropagation(int inputIndex) {
         deltas[i] = thisLayerDeltas;
     }
 
+    // add multithreading to update bias
+
+
+
     // Update weights and biases for all layers
     for (int i = 1; i < nLayers; ++i) {
         layers[i].updateLayerWeightsAndBiases(deltas[i], learningRate);
@@ -274,7 +278,8 @@ void NeuralNetwork::confusion(const std::vector<std::vector<double>> &inputs, co
         for (int j = 0; j < N; ++j) {
             std::cout << std::setw(maxWidth) << static_cast<int>(confusionMatrix[i][j]) << " ";
         }
-        std::cout << " | prec_" << i << ": " << precision[i] << " | recall_" << i << ": " << recall[i] << std::endl;
+        // force to print precesion with 6 decimals:
+        std::cout << " | prec_" << i << ": " << std::fixed << std::setprecision(6) << precision[i] << " | recall_" << i << ": " << recall[i] << std::endl;
     }
 }
 
