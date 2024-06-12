@@ -1,4 +1,5 @@
 # Project Overview
+Developped by Eymeric GIABICANI.
 
 This project implements a modular neural network building approach, enabling the construction of neural networks with customizable architectures. The project supports both regression and multilabel classification tasks.
 
