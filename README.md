@@ -20,6 +20,50 @@ The project follows a modular architecture inspired by Keras, allowing users to 
 - The `confusion()` method can only be used on a multilabel classification model (softmax output activation).
 - Data formatting has to be done manually by the user depending on their dataset. Examples of data formatting are given in the `main.cpp` files for MNIST classification, XOR regression, and Sentiment Analysis examples.
 
+## Usage Example:
+
+## Project Usage:
+
+To use this project, download this GitHub repository and start it using CMake (You can use CLion to do it, for example). The examples that follow can only work if you copy the cmake_debug file, in which the datasets are stored for those examples. For each example, you have to change the name of the main.cpp file in the `CMakeLists.txt` file to the correct one to launch the desired main file.
+
+### Regression on XOR Function
+
+In this example, we perform regression by training a neural network to approximate the XOR function.
+
+The example can be found in the file:
+```
+mainXOR.cpp
+```
+
+### Multilabel Classification:
+
+In this example, we perform the classification on handwritten numbers from the MNIST dataset.
+
+The example can be found in the file:
+```
+mainMNIST.cpp
+```
+
+You may need to download the MNIST dataset and change the path to the file in the code to make it work.
+
+### Loading Model Examples:
+
+In this example, we are loading a model for XOR regression and evaluating it on the different XOR possible entries.
+
+The example can be found in the file:
+```
+mainXORloadtest.cpp
+```
+
+### Sentiment Analysis:
+
+In this example, we try to perform a multilabel classification task on tweets. This example is not fully functional due to the optimization method used to update the weights of the model (SGD without momentum). I leave the example as an example of data formatting.
+
+This example can be found in the file:
+```
+mainSentiment.cpp
+```
+
 ### `NeuralNetwork`
 
 The `NeuralNetwork` class represents a neural network model in which the user can add layers by themselves, following the modular approach of the Python Keras library.
@@ -85,49 +129,7 @@ The `Layer` class represents a single layer in a neural network.
 
 ---
 
-## Usage Example:
 
-## Project Usage:
-
-To use this project, download this GitHub repository and start it using CMake (You can use CLion to do it, for example). The examples that follow can only work if you copy the cmake_debug file, in which the datasets are stored for those examples. For each example, you have to change the name of the main.cpp file in the `CMakeLists.txt` file to the correct one to launch the desired main file.
-
-### Regression on XOR Function
-
-In this example, we perform regression by training a neural network to approximate the XOR function.
-
-The example can be found in the file:
-```
-mainXOR.cpp
-```
-
-### Multilabel Classification:
-
-In this example, we perform the classification on handwritten numbers from the MNIST dataset.
-
-The example can be found in the file:
-```
-mainMNIST.cpp
-```
-
-You may need to download the MNIST dataset and change the path to the file in the code to make it work.
-
-### Loading Model Examples:
-
-In this example, we are loading a model for XOR regression and evaluating it on the different XOR possible entries.
-
-The example can be found in the file:
-```
-mainXORloadtest.cpp
-```
-
-### Sentiment Analysis:
-
-In this example, we try to perform a multilabel classification task on tweets. This example is not fully functional due to the optimization method used to update the weights of the model (SGD without momentum). I leave the example as an example of data formatting.
-
-This example can be found in the file:
-```
-mainSentiment.cpp
-```
 
 # Author
 Project developped by Eymeric GIABICANI.
