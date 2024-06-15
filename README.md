@@ -22,8 +22,6 @@ The project follows a modular architecture inspired by Keras, allowing users to 
 
 ## Usage Example:
 
-## Project Usage:
-
 To use this project, download this GitHub repository and start it using CMake (You can use CLion to do it, for example). The examples that follow can only work if you copy the cmake_debug file, in which the datasets are stored for those examples. For each example, you have to change the name of the main.cpp file in the `CMakeLists.txt` file to the correct one to launch the desired main file.
 
 ### Regression on XOR Function
