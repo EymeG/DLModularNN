@@ -50,7 +50,7 @@ In this example, we are loading a model for XOR regression and evaluating it on 
 
 The example can be found in the file:
 ```
-mainXORloadtest.cpp
+mainXORloadTest.cpp
 ```
 
 ### Sentiment Analysis:
