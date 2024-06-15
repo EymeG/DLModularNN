@@ -34,13 +34,6 @@ void printResult(const std::vector<std::vector<double>> inputs, const std::vecto
 }
 
 int main(){
-    NeuralNetwork nn(0.1, 400,"bin_crossentropy");
-    nn.addLayer(Layer(2, "input"));
-    nn.addLayer(Layer(35, "relu"));
-    nn.addLayer(Layer(35, "linear"));
-    nn.addLayer(Layer(20,  "sigmoid"));
-    nn.addLayer(Layer(10,  "tanh"));
-    nn.addLayer(Layer(1,  "sigmoid"));
 
     std::vector<std::vector<double>> inputs = {
             {1, 1},
@@ -49,15 +42,14 @@ int main(){
             {0, 0}
     };
     std::vector<double> expectedOutputs = {0, 1, 1, 0};
-    nn.train(inputs, expectedOutputs);
-    std::vector<std::vector<double>> results = nn.evaluate(inputs);
-    nn.summary();
-    std::cout << "Results after training:" << std::endl;
+
+
+    NeuralNetwork ni = NeuralNetwork();
+    ni.load("./models/modelBinaryClassificationXOR.txt");
+    ni.summary();
+    std::vector<std::vector<double>> results = ni.evaluate(inputs);
+    std::cout << "Results after loading the model:" << std::endl;
     printResult(inputs, results, expectedOutputs);
-    nn.save("./models/modelMSEXOR.txt");
-
-
-
 
 
 }

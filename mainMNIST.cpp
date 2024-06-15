@@ -155,8 +155,8 @@ int main() {
     // Create and configure the neural network
     NeuralNetwork nnMNIST(0.2, 5, "cat_crossentropy");
     nnMNIST.addLayer(Layer(196, "input"));
-    nnMNIST.addLayer(Layer(50, "tanh"));
-    nnMNIST.addLayer(Layer(50, "sigmoid"));
+    nnMNIST.addLayer(Layer(20, "tanh"));
+    nnMNIST.addLayer(Layer(20, "sigmoid"));
     nnMNIST.addLayer(Layer(10, "softmax"));
     nnMNIST.summary();
 
@@ -178,16 +178,16 @@ int main() {
     std::cout << "Results on the test set:" << std::endl;
     nnMNIST.confusion(inputTestMNIST, expectedTestMNIST);
 
-    std::cout << std::endl;
-    std::cout << "--------------------------------------------" << std::endl;
-    std::cout << std::endl << "New MNIST network loaded:"<< std::endl;
-    NeuralNetwork nnMNIST2;
-    nnMNIST2.load("./models/modelMNISTxRelu20xSigm20.txt");
+    std::cout << "Evaluation of the 10 starting entries of the test set: \n";
+    for(int i = 0; i< 10; i++){
+        std::vector<std::vector<double>> tempRes = {inputTestMNIST[i]};
+        std::vector<std::vector<double>> resultsTestMNIST = nnMNIST.evaluate(tempRes);
+        std::cout << "Expected: " << (int) expectedTestMNIST[i] << " Got: ";
+        printVector(resultsTestMNIST[0]);
+        std::cout << std::endl;
+    }
 
-    nnMNIST2.summary();
 
-    std::cout << "Results on the test set:" << std::endl;
-    nnMNIST2.confusion(inputTestMNIST, expectedTestMNIST);
 
 
 

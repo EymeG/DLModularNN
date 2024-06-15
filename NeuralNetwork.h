@@ -13,7 +13,7 @@ public:
      * @brief Constructs a NeuralNetwork with the given learning rate, number of epochs, and loss function.
      * @param lr The learning rate for the neural network.
      * @param nEpochs The number of epochs for training.
-     * @param lossFunction The loss function to use for training ("mse", "cross_entropy", etc.).
+     * @param lossFunction The loss function to use for training ("mse", "bin_crossentropy", "cat_crossentropy", etc.).
      */
     NeuralNetwork(double lr, int nEpochs, std::string lossFunction);
 
@@ -31,7 +31,7 @@ public:
     /**
      * @brief Performs a feedforward operation through the network.
      * @param inputIndex The index of the input data to use.
-     * @param isTraining Flag to indicate if the network is in training mode.
+     * @param isTraining Flag to indicate if the network is in training mode (true = training).
      */
     void feedForward(int inputIndex, bool isTraining);
 

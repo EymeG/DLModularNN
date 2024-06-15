@@ -163,6 +163,7 @@ void NeuralNetwork::load(const std::string &filename) {
             layers.push_back(layer);
         }
     }
+    std::cout << "Neural network loaded successfully from " << filename << std::endl;
 
     file.close();
 }
